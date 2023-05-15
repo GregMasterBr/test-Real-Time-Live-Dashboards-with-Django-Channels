@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static%}
+
+{% block 'head' %} 
+    <meta name="description" content="Home">
+{% endblock %}
+
+{% block 'title' %}Statics-Main{% endblock %}
+
+{% block 'body' %}
+<div class="container">
+    <h1>Seja bem-vindo a MAIN</h1>
+    <hr style="background-color: gray;" />    
+    <h2>Statics</h2>
+    <form method="POST">{% csrf_token %}
+        <div class="form-group">
+            <input type="text" class="form-control" name="new-statistic" />
+            <button type="submit" class="btn btn-primary mt-3">+ Add</button>
+        </div>
+    </form>    
+    {% if qs %}
+        <ul>
+            {% for el in qs %}
+                {% comment %} <li><a href="{% url 'dashboard' el.slug %}">{{el.name}}</a></li> {% endcomment %}
+                <li><a href="{{ el.get_absolute_url }}">{{el.name}}</a></li>
+
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+</div>    
+{% endblock %}

@@ -1,0 +1,11 @@
+black==22.10.0
+channels==3.0.5
+channels-redis==3.4.1
+Django>=4.1,<4.2
+dj-database-url==1.0.0
+Faker==18.7.0
+pytest==7.2.0
+pytest-cov==4.0.0
+pytest-django==4.5.2
+python-decouple==3.6
+
